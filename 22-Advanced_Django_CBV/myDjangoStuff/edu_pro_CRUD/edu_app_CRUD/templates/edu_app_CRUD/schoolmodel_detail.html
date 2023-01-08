@@ -1,0 +1,23 @@
+{% extends 'edu_app_CRUD/edu_app_CRUD_base.html' %}
+  {% block body_block %}
+    <div class="jumbotron mt-3 p-5">
+      <h1>Welcome to Detail View...</h1>
+      <div class="container">
+        <ul>
+          <h3><li>School: {{ schoolmodel_detail.school_name }}</li></h3>
+          <h3><li>Principal: {{ schoolmodel_detail.principal }}</li></h3>
+          <h3><li>Location: {{ schoolmodel_detail.location }}</li></h3>
+          <h3><li>Students:</li></h3>
+          <ol>
+            {% for student in schoolmodel_detail.students.all %}
+              <h4><a href="{% url 'edu_app_CRUD:student_delete' pk=student.pk %}"><li>{{ student.student_name }}, who is {{ student.age }} years old.</li></a></h4>
+            {% endfor %}
+          </ol>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <a class="btn btn-warning" href="{% url 'edu_app_CRUD:school_update' pk=schoolmodel_detail.pk %}">Update</a>
+      <a class="btn btn-danger" href="{% url 'edu_app_CRUD:school_delete' pk=schoolmodel_detail.pk %}">Delete</a>
+    </div>
+  {% endblock %}

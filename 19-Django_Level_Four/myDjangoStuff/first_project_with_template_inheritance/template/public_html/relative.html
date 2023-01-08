@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'public_html/base.html' %}
+  {% block body_block %}
+    <h1>Welcome to Relative Page!</h1>
+    <a href="{% url 'index' %}">Home Page</a>
+    <br>
+    <a href="{% url 'first_app_with_template_inheritance:other' %}">Other Page</a>
+    <br>
+    <a href="{% url 'admin:index' %}">Database</a>
+  {% endblock %}
+  {% block bottom_block %}
+    <p>Relative Page</p>
+  {% endblock %}

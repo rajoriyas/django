@@ -1,0 +1,14 @@
+{% extends 'edu_app_CRUD/edu_app_CRUD_base.html' %}
+  {% block body_block %}
+    <div class="jumbotron mt-3 p-5">
+      <h1>Welcome to Delete View...</h1>
+      <h3>Delete {{ schoolmodel.school_name }}</h3>
+      <div class="container">
+        <form method="post">
+          {% csrf_token %}
+          <input type="submit" class="btn btn-danger" value="Delete">
+          <a href="{% url 'edu_app_CRUD:school_detail' pk=schoolmodel.pk %}">Cancel</a>
+        </form>
+      </div>
+    </div>
+  {% endblock %}

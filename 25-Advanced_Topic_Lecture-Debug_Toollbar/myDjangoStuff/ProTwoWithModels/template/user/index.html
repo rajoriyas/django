@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User Info</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+  </head>
+  <body>
+    <h1>Welcome to User Info Panel</h1>
+    <h3>This user panel contains first name, last name and email address</h3>
+    <div>
+      {% if info %}
+        <ol>
+          {% for i in info %}
+            <li>
+              <div>
+                <p>User Info</p>
+                <p>&#9702; First Name: {{i.first_name}}</p>
+                <p>&#9702; Last Name: {{i.last_name}}</p>
+                <p>&#9702; Email: {{i.email}}</p>
+              </div>
+            </li>
+          {% endfor %}
+        </ol>
+      {% else %}
+        <p>No Record Found!</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

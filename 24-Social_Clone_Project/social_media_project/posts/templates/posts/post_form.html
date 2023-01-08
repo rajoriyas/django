@@ -1,0 +1,15 @@
+{% extends 'posts/post_base.html' %}
+{% load bootstrap4 %}
+  {% block post_content %}
+    <div class="jumbotron m-3 col-12">
+      <a href="{% url 'posts:all' %}" class="float-right btn btn-primary btn-lg">All Post</a>
+      <h4>Create a new Post</h4>
+      <form class="form-group" action="{% url 'posts:create' %}" method="POST" id='postForm'>
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+          <input type="submit" name="" value="Post" class="btn btn-primary btn-lg">
+        {% endbuttons %}
+      </form>
+    </div>
+  {% endblock %}

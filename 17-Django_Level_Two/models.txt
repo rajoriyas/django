@@ -1,0 +1,28 @@
+:: Add app to first_project_with_models/settings.py in INSTALLED_APPS list ::
+  'first_app_with_models',
+
+:: create models in first_app_with_models/.py
+
+:: Commands ::
+  python manage.py migrate
+  python manage.py makemigrations first_app_with_models
+  python manage.py migrate
+
+:: Shell Test ::
+  python manage.py shell
+  from first_app_with_models.models import Topic
+  print(Topic.objects.all())
+  t = Topic(top_name = 'Social Media')
+  print(Topic.objects.all())
+
+:: Adding models to admin
+  add models in first_app_with_models/admin.py like in this project
+  python manage.py createsuperuser
+  python manage.py runserver
+
+:: Go to::
+  URL/admin
+
+:: Populate using Faker
+  python -m pip install Faker
+  go through populate_first_project_with_models.py

@@ -1,0 +1,16 @@
+{% extends 'blogging_world_app/base.html' %}
+  {% block content %}
+    <div class="centerstage">
+      {% for post in post_list %}
+        <div class="post">
+          <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+          <h4><a href="{% url 'post_detail' pk=post.pk %}">{{ post.text }}</a></h4>
+          <div class="date">
+            <p>Published on: {{ post.published_date|date:"D M Y" }}</p>
+          </div>
+          <!-- Inheritated model can be inhertated directly like this -->
+          <a href="{% url 'post_detail' pk=post.pk %}">{{ post.approve_comments.count }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endblock %}

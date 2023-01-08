@@ -1,0 +1,15 @@
+{% extends 'edu_app_CRUD/edu_app_CRUD_base.html' %}
+  {% block body_block %}
+    <div class="jumbotron mt-3 p-5">
+      <h1>Welcome to Modify View...</h1>
+      <h3>Modify {{ studentmodel.student_name }}</h3>
+      <div class="container">
+        <form method="post">
+          {% csrf_token %}
+          <input type="submit" class="btn btn-danger m-2" value="Delete">
+          <a href="{% url 'edu_app_CRUD:student_update' pk=studentmodel.pk %}" class="btn btn-warning m-2">Update</a>
+          <a href="{% url 'edu_app_CRUD:school_detail' pk=studentmodel.school_name.pk %}" class="m-2">Cancel</a>
+        </form>
+      </div>
+    </div>
+  {% endblock %}

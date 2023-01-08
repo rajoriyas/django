@@ -1,0 +1,24 @@
+# run following commands
+	django-admin startproject project_name
+	cd project_name
+	python manage.py startapp app_name
+			or
+	django-admin startapp app_name
+	
+# open views.py in app_name folder 
+# import followings
+	from django.http import HttpResponse
+
+# create following function
+	def index(request):
+		return HttpResponse('Hello World')
+		
+# open urls.py in prject_name folder
+# import followings
+	from app_name import views
+	
+# add path in urlpatterns
+	path('', views.index, name='index')
+
+# run following command		
+	python manage.py runserver

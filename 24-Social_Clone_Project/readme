@@ -1,0 +1,9 @@
+pip install django-bootstrap4
+
+https://www.tutorialspoint.com/beautiful_soup/beautiful_soup_installation.htm
+
+:: for bs4 error, run this command to install beautifulsoup4 ::
+	easy_install beautifulsoup4
+
+pip install misaka
+pip install django-braces

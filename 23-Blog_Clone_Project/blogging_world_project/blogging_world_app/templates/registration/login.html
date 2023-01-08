@@ -1,0 +1,16 @@
+{% extends 'blogging_world_app/base.html' %}
+  {% block content %}
+    <div class="jumbotron">
+      <h2 class="pb-0 mb-0">Please Login:</h2>
+      <small class="mt-0 pt-0">must be superuser, please check with the site main.</small>
+      {% if form.errors %}
+        <p>Your username and password didn't match! Please try again!</p>
+      {% endif %}
+      <form action="{% url 'login' %}" method="POST" class="mt-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Login">
+        <input type="hidden" name="next" value="{{ next }}">
+      </form>
+    </div>
+  {% endblock %}

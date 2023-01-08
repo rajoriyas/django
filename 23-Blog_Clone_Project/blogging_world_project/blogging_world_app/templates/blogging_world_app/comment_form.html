@@ -1,0 +1,13 @@
+{% extends 'blogging_world_app/base.html' %}
+  {% load static %}
+  {% block content %}
+    <h1>New Comment</h1>
+    <form class="post-form" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input class="save btn btn-default" type="submit" value="Post Comment">
+    </form>
+
+    <script src="{% static 'js/medium-editor.js' %}"></script>
+    <script>var editor = new MediumEditor('.editable');</script>
+  {% endblock %}

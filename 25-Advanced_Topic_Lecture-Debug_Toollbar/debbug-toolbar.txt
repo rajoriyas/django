@@ -1,0 +1,5 @@
+:: Install Toolbar
+	pip install django-debug-toolbar
+
+:: Configure Toolbar
+	https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
